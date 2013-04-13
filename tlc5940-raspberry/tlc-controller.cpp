@@ -74,13 +74,14 @@ void TLCController<NUM>::update()
 {
 	this->updateInit();
 	
-	int channel_counter = 0;
+	// Start with the highest channel
+	int channel_counter = (NUM * 16) - 1;
 	int gsclk_counter = 0;
 	bool pulse_gsclk = true;
 	
 	while(gsclk_counter < 4096)
 	{
-		if(channel_counter < NUM * 16)
+		if(channel_counter >= 0)
 		{						
 			// Send the first 12 bits of the color to the TLC, MSB first
 			for(int i = 11; i >= 0; i--)
@@ -94,7 +95,7 @@ void TLCController<NUM>::update()
 				gsclk_counter++;
 			}
 
-			channel_counter++;
+			channel_counter--;
 		}
 		else
 		{
