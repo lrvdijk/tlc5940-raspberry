@@ -63,10 +63,11 @@ void pattern_thread()
 		{
 			reverse = true;
 		}
+
+		std::chrono::milliseconds duration(1500);
+		std::this_thread::sleep_for(duration);
 	}
 
-	std::chrono::milliseconds duration(1500);
-	std::this_thread::sleep_for(duration);
 }
 
 int main()
