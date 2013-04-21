@@ -47,8 +47,8 @@ Download the latest version on your Raspberry Pi, and extract its contents.
 Navigate to the right folder, and execute the following commands:
 
     ./configure --prefix=/usr
-	make
-	sudo make install
+    make
+    sudo make install
 
 It's better to install the library in /usr instead of the default /usr/local,
 because by default `pkg-config` doesn't check the /usr/local folders for
@@ -87,21 +87,21 @@ You're free to choose any pin on the Raspberry Pi, but keep the [special pin fun
 in mind. Define the pins in your code using multiple instances of the class
 `RaspberryGPIOPin`:
 
-	RaspberryGPIOPin tlc_sin(1);
-	RaspberryGPIOPin tlc_sclk(14);
-	RaspberryGPIOPin tlc_blank(4);
-	RaspberryGPIOPin tlc_dcprg(5);
-	RaspberryGPIOPin tlc_vprg(6); 
-	RaspberryGPIOPin tlc_xlat(10);
-	RaspberryGPIOPin tlc_gsclk(11);
-	
-	tlc_sin.setOutput();
-	tlc_sclk.setOutput();
-	tlc_blank.setOutput();
-	tlc_dcprg.setOutput();
-	tlc_vprg.setOutput();
-	tlc_xlat.setOutput();
-	tlc_gsclk.setOutput();
+    RaspberryGPIOPin tlc_sin(1);
+    RaspberryGPIOPin tlc_sclk(14);
+    RaspberryGPIOPin tlc_blank(4);
+    RaspberryGPIOPin tlc_dcprg(5);
+    RaspberryGPIOPin tlc_vprg(6); 
+    RaspberryGPIOPin tlc_xlat(10);
+    RaspberryGPIOPin tlc_gsclk(11);
+    
+    tlc_sin.setOutput();
+    tlc_sclk.setOutput();
+    tlc_blank.setOutput();
+    tlc_dcprg.setOutput();
+    tlc_vprg.setOutput();
+    tlc_xlat.setOutput();
+    tlc_gsclk.setOutput();
 
 The number given with the `RaspberryGPIOPin` constructor represents the **wiringPi
 pin number**, not the BCM GPIO number. See the wiringPi site for the numbers.
