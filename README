@@ -119,7 +119,7 @@ To enable an output, you use the `setChannel` method. `setall` sets the specifie
 for all channels.
 
     tlc_controller.setChannel(0, 2048); // Set channel 0 to half of the brightness
-    tlc_controller,setChannel(1, 4095); // Set channel 1 to full brightness
+    tlc_controller.setChannel(1, 4095); // Set channel 1 to full brightness
 
 Using the `update` method, the data is sent to the TLC5940. Remember, this function
 needs to be called continuously, even if you don't changed any output values.
